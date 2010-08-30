@@ -1,0 +1,55 @@
+idlDropbox plugin
+==============
+
+The `idlDropboxPlugin` adds [Dropbox](https://www.dropbox.com/referrals/NTc5OTg0MzE5) features to Symfony project .
+
+Summary of Features
+-------------------
+The following features are currently available:
+
+  * retrieve account information
+  * upload file
+  * create directories
+
+More features will come later.
+
+Installation
+--------------------
+
+  * Open a user account on [Dropbox](https://www.dropbox.com/referrals/NTc5OTg0MzE5)
+  * [Register](https://www.dropbox.com/developers/apply) as developper with the new account to get the consumer_key and consumer_secret
+  * Install the plugin
+  * Enable Plugin (Only for Symfony 1.2 and above)
+  * Modify *app.yml* file to add Dropbox authentication info
+   
+        [yml]
+          all:
+            ...
+            dropbox:
+              consumer_key:               myconsumerkey
+              consumer_secret:            myconsumersecret
+              user:                       user@mail.com
+              password:                   mypassword
+              oauth_lib:                  PHP              #The OAuth library to use. Can be PHP standard lib or Pear(optional, by default PHP)
+         
+
+Usage
+---------------------
+This plugin provide a idlDropbox class you can use in you project (see inline documentation) and add also Symfony tasks.
+
+Task usage example:
+
+      php symfony dropbox:upload --source=C:/myfile.pdf --target=test/myfile.pdf
+      php symfony dropbox:account-info
+
+TODO
+----
+
+  * Complete with the others API features like file download
+  * Contact me for any other requirements/ideas
+
+CREDITS
+-------
+
+  * Plugin developed by [Idael Software](http://www.idael.ch) (Gael Poffet)
+  * This plugin uses [Dropbox PHP API](http://code.google.com/p/dropbox-php/)
